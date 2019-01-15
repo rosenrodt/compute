@@ -49,6 +49,7 @@ inline void dispatch_gpu_stable_sort(Iterator first,
     }
 }
 
+#ifndef BOOST_COMPUTE_NO_RADIX_SORT
 template<class T>
 inline typename boost::enable_if_c<is_radix_sortable<T>::value>::type
 dispatch_gpu_stable_sort(buffer_iterator<T> first,
@@ -69,6 +70,7 @@ dispatch_gpu_stable_sort(buffer_iterator<T> first,
     // radix sorts in descending order
     ::boost::compute::detail::radix_sort(first, last, false, queue);
 }
+#endif // BOOST_COMPUTE_NO_RADIX_SORT
 
 } // end detail namespace
 

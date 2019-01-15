@@ -38,6 +38,12 @@ if(${BOOST_COMPUTE_USE_OFFLINE_CACHE})
   add_definitions(-DBOOST_COMPUTE_USE_OFFLINE_CACHE)
 endif()
 
+# performance concern
+option(BOOST_COMPUTE_NO_RADIX_SORT "Disable radix sort implementation used in varius sort algorithms" ON)
+if(${BOOST_COMPUTE_NO_RADIX_SORT})
+  add_definitions(-DBOOST_COMPUTE_NO_RADIX_SORT)
+endif()
+
 # thread-safety options
 option(BOOST_COMPUTE_THREAD_SAFE "Compile with BOOST_COMPUTE_THREAD_SAFE defined" OFF)
 if(${BOOST_COMPUTE_THREAD_SAFE})

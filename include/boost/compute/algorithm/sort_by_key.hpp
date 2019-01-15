@@ -30,6 +30,7 @@ namespace boost {
 namespace compute {
 namespace detail {
 
+#ifndef BOOST_COMPUTE_NO_RADIX_SORT
 template<class KeyIterator, class ValueIterator>
 inline void
 dispatch_gpu_sort_by_key(KeyIterator keys_first,
@@ -84,6 +85,7 @@ dispatch_gpu_sort_by_key(KeyIterator keys_first,
         );
     }
 }
+#endif // BOOST_COMPUTE_NO_RADIX_SORT
 
 template<class KeyIterator, class ValueIterator, class Compare>
 inline void dispatch_gpu_sort_by_key(KeyIterator keys_first,

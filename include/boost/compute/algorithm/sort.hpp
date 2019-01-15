@@ -31,6 +31,7 @@ namespace boost {
 namespace compute {
 namespace detail {
 
+#ifndef BOOST_COMPUTE_NO_RADIX_SORT
 template<class T>
 inline void dispatch_gpu_sort(buffer_iterator<T> first,
                               buffer_iterator<T> last,
@@ -79,6 +80,7 @@ inline void dispatch_gpu_sort(buffer_iterator<T> first,
         ::boost::compute::detail::radix_sort(first, last, false, queue);
     }
 }
+#endif // BOOST_COMPUTE_NO_RADIX_SORT
 
 template<class Iterator, class Compare>
 inline void dispatch_gpu_sort(Iterator first,
