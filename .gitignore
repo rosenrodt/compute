@@ -1,5 +1,7 @@
 # build directory
 build/
+.build/
+Testing/
 
 # python compiled files
 *.pyc
@@ -12,3 +14,5 @@ bin/
 doc/bin/
 doc/html/
 doc/autodoc.xml
+
+.vscode/
