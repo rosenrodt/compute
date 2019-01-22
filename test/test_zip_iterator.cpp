@@ -229,4 +229,15 @@ BOOST_AUTO_TEST_CASE(zip_constant_iterator)
     CHECK_RANGE_EQUAL(int, 4, result, (7, 7, 7, 7));
 }
 
+
+BOOST_AUTO_TEST_CASE(mesh_compression)
+{
+	int index[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+	int vertex[] = { 11, 22, 33, 11, 22, 44, 22, 55, 77 };
+
+	CHECK_RANGE_EQUAL(int, 9, index_output, (0, 1, 2, 0, 1, 3, 1, 4, 5));
+	CHECK_RANGE_EQUAL(int, 6, vertex_output, (11, 22, 33, 44, 55, 77));
+
+}
+
 BOOST_AUTO_TEST_SUITE_END()
